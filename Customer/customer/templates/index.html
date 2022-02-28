@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/navbar.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/slideshow.css') }}">
+
+<style>
+
+</style>
+</head>
+<body style="background-color: black; overflow: hidden">
+    {% include 'navbar.html' %}
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                        <img src="{{ url_for('static',filename='styles/3.jpg') }}" style="width:100%">
+                    <div class="bottom-left">A safe place for your savings</div>
+                </div>
+                <div class="mySlides fade">
+                        <img src="{{ url_for('static',filename='styles/5.jpg') }}" style="width:100%">
+                    <div class="top-left">Build a strong financial base with us</div>
+                </div>
+                <div class="mySlides fade">
+                        <img src="{{ url_for('static',filename='styles/9.jpg') }}" style="width:100%">
+                    <div class="bottom-left"></div>
+                </div>
+                <div class="mySlides fade">
+                        <img src="{{ url_for('static',filename='styles/2.jpg') }}" style="width:100%">
+                    <div class="bottom-right">Dealings made easier</div>
+                </div>
+
+            </div>
+
+<br>
+            <div style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+
+            </div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2500); // Change image every 2 seconds
+}
+</script>
+
+</body>
+</html>
+

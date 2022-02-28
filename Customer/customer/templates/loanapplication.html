@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <title>Bank Of Kerala</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/table.css') }}">
+<style>
+    .container ul li:hover{
+    opacity: 0.85;
+    transform: scale(1);
+}
+
+.container ul li .bottom{
+    line-height: 50px;
+    background: grey;
+    text-align: center;
+    color:white;
+
+
+}
+.container ul li{
+    background: darkgray;
+}
+</style>
+</head>
+<body style="justify-content: center">
+    {% include 'customernavbar.html' %}
+    <div class="content">
+<div class="container">
+        <ul>
+            <li  style="margin :20px 0px 120px 500px"> <div class="bottom">LOAN APPLICATION
+
+<form action="{{url_for('loansubmit')}}" method="post" class="frm">
+    <br>
+  <input type="number" name="loanamount" placeholder="Loan Amount" required><br>
+    <button type="submit" value="submit">Submit</button>
+
+<br>
+            {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+</form>
+
+            </div>
+            </li>
+
+        </ul>
+
+</div></div>
+</body>
+</html>

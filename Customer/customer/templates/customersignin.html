@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank Of Kerala</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<style>
+    .container ul li:hover{
+    opacity: 0.88;
+    transform: scale(1);
+}
+
+.container ul li .bottom{
+    line-height: 50px;
+    background: grey;
+    text-align: center;
+    color:white;
+
+
+}
+.container ul li{
+    background: darkgray;
+}
+</style>
+<body>
+
+    {% include 'navbar.html' %}
+
+        <div class="content">
+<div class="container">
+        <ul>
+            <li  style="margin :20px 0px 120px 500px"> <div class="bottom">SIGN IN
+<form action="{{url_for('form_signin')}}" method="post" class="frm">
+  <input type="number" name="phone" placeholder="Registered Phone No" required><br>
+      <input type="text" name="username" placeholder="Username" required>
+  <input type="password" name='password' placeholder="Password" required><br>
+    <button type="submit" value="SiginIn">Submit</button>
+    </form>
+            </div> </li>
+        </ul>
+
+    </div>
+            {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+             <div class="error" style="text-align: center; color: white">ALERT: {{ message }}</div>
+            myFunction("func")
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+</div>
+
+</body>
+</html>

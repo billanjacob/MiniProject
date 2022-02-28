@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <title>Bank Of Kerala</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/table.css') }}">
+
+</head>
+<body style="justify-content: center">
+    {% include 'customernavbar.html' %}
+    <div class="content" style="height: 500px"><br><br><br>
+<table>
+    <tr> <th>User Name:</th><th>{{username}}</th> </tr>
+    <tr> <td>Account holder name:</td><td> {{cname}}</td> </tr>
+    <tr> <td>CIFNo:</td><td>{{cifno}}</td> </tr>
+    <tr> <td>Savings Account No:</td><td>{{sacno}}</td> </tr>
+    <tr> <td>Current Account No:</td><td>{{cacno}}</td> </tr>
+    <tr> <td>Address:</td><td>{{address}}</td> </tr>
+    <tr> <td>Phone:</td><td>{{phone}}</td> </tr>
+    <tr> <td>Email:</td><td>{{email}}</td> </tr>
+</table>
+
+        <br><br></div>
+</body>
+</html>

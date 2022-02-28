@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <title>Bank Of Kerala</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/table.css') }}">
+
+</head>
+<body style="justify-content: center">
+    {% include 'customernavbar.html' %}
+    <div class="content" style="height: 500px"><br><br><br>
+<div class="container">
+        {% if appno %}   <!-- table visible only if loan applied -->
+<table>
+    <tr> <td>Application No:</td><td>{{appno}}</td> </tr>
+    <tr> <td>Amount</td><td>{{loanamount}}</td> </tr>
+    <tr> <td>Date Applied</td><td>{{date}}</th> </tr>
+    <tr> <td>Status</td><td>{{status}}</td> </tr>
+</table>
+{% endif %}
+        <br><br>
+             {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+             <div class="error">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+        </div>
+    </div>
+</body>
+</html>

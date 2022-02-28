@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+ <title>Bank Of Kerala</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body>
+<div class="header">
+  <a href="{{ url_for('index') }}" class="logo">Bank OF Kerala</a>
+  <div class="header-right">
+    <a href="{{ url_for('index') }}">Home</a>
+      <a href="{{url_for('customerlogin')}}">Login</a>
+      <a href="{{url_for('customersignin')}}">SignIn</a>
+    <a href="{{ url_for('contact_guest') }}">Contact</a>
+    <a href="{{ url_for('about') }}">About</a>
+  </div>
+</div>
+</body>
+</html>

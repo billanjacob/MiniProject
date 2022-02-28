@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <title>Bank Of Kerala</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/table.css') }}">
+
+</head>
+<body style="justify-content: center">
+    {% include 'customernavbar.html' %}
+    <div class="content" style="height: 500px">
+        <br><br><br>
+        <h3 style="color: white; text-align: center;  font-family: 'Courier New', monospace;">ACCOUNT DETAILS</h3>
+        <!-- flag == 1 implies only one account either savings or current -->
+        <table>
+{% if flag == 1 %}
+    {% if actype == 'S' %}
+    <tr><th>Account Type:</th><th>Savings</th></tr>
+    {% elif actype =='C' %}
+    <tr><th>Account Type:</th><th>Current</th></tr>
+    {% endif %}
+    <tr><td>Account No:</td> <td> {{acno}}</td>
+    <tr><td>Balance:</td> <td>{{balance}}</td></tr>
+    <tr><td>Date Opened:</td> <td>{{dateopened}}</td></tr>
+{% endif %}
+</table>
+
+
+        <!-- flag == 2 implies only two accounts, savings & current -->
+<table>
+{% if flag == 2 %}
+    {% if actype1 == 'S' %}
+    <tr><th>Account Type:</th><th>Savings</th></tr>
+    {% elif actype1 =='C' %}
+    <tr><th>Account Type:</th><th>Current</th></tr>
+    {% endif %}
+    <tr><td>Account No:</td><td>{{acno1}}</td></tr>
+    <tr><td>Balance:</td><td>{{balance1}}</td></tr>
+    <tr><td>Date Opened:</td><td>{{dateopened1}}</td></tr>
+</table>
+<br>
+
+
+        <table>
+    {% if actype2 == 'S' %}
+    <tr><th>Account Type:</th><th>Savings</th></tr>
+    {% elif actype2 =='C' %}
+    <tr><th>Account Type:</th><th>Current</th></tr>
+    {% endif %}
+    <tr><td>Account No:</td><td>{{acno2}}</td></tr>
+    <tr><td>Balance:</td><td>{{balance2}}</td></tr>
+    <tr><td>Date Opened:</td><td>{{dateopened2}}</tr>
+{% endif %}
+</table>
+<br><br>
+
+    </div>
+</body>
+</html>
