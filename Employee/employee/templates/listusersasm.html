@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <title>Bank Of Kerala</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/table.css') }}">
+
+</head>
+
+<style>
+    .container{
+        height:250px;
+    }
+    .container ul li:hover{
+    opacity: 100%;
+    transform: scale(1);
+}
+
+.container ul li .bottom{
+    line-height: 40px;
+    background: grey;
+    text-align: center;
+}
+.container ul li{
+    background: darkgray;
+    height:200px;
+}
+</style>
+
+<body style="justify-content: center">
+    {% include 'asstmanagernavbar.html' %}
+    <div class="content">
+    <div class="container" style="height: 500px">
+    <table>
+    <tr><th>Name</th><th>CIFNo</th><th>User Name</th><th>Savings Account No</th><th>Current Account No</th><th>Address</th><th>Phone</th><th>Email</th><th>Status</th></tr>
+    {% for r in row %}
+
+    <tr><td>{{ r[5] }}</td><td>{{ r[0] }}</td><td>{{ r[1] }}</td><td>{{ r[3] }}</td><td>{{ r[4] }}<td>{{ r[6] }}<td>{{ r[7] }}<td>{{ r[8] }}<td>{{ r[9] }}</td></tr>
+    {% endfor %}
+    </table>
+
+    </div>
+</div>
+</body>
+</html>

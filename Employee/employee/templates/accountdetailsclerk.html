@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <title>Bank Of Kerala</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/table.css') }}">
+
+</head>
+
+<style>
+    .container{
+        height:250px;
+    }
+    .container ul li:hover{
+    opacity: 100%;
+    transform: scale(1);
+}
+
+.container ul li .bottom{
+    line-height: 40px;
+    background: grey;
+    text-align: center;
+}
+.container ul li{
+    background: darkgray;
+    height:200px;
+
+}
+</style>
+
+<body style="justify-content: center">
+    {% include 'clerknavbar.html' %}
+    <div class="content">
+
+    <div class="container">
+        <ul>
+            <li  style="margin :20px 0px 120px 500px"> <div class="bottom">Enter Account Number
+
+            <form action="{{url_for('showacdetailsclerk')}}" method="post" class="frm">
+    <br>
+  <input type="number" name="acno" placeholder="Account Number" required><br>
+    <button type="submit" value="Submit">SUBMIT</button>
+    </form>
+
+            </div> </li>
+        </ul>
+    </div>
+
+        {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+             <div class="error">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+    <br><br>
+    {% if acno %}
+<table>
+    {% if actype == 'S' %}
+    <tr><th>Account Type:</th><th>Savings</th></tr>
+    {% elif actype =='C' %}
+    <tr><th>Account Type:</th><th>Current</th></tr>
+    {% endif %}
+    <tr><td>Name:</td><td>{{cname}}</td></tr>
+    <tr><td>Account No:</td><td>{{acno}}</td></tr>
+    <tr><td>Balance:</td><td>{{balance}}</td></tr>
+    <tr><td>Date Opened:</td><td>{{dateopened}}</td></tr>
+</table>
+    {% endif %}
+</div>
+</body>
+</html>

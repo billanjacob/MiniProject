@@ -1,0 +1,54 @@
+
+#header {
+  overflow: hidden;
+  font-family: 'Courier New', monospace;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#header a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 20px; /* distance between contents*/
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 10px;  /* distance from top*/
+  border-radius: 4px;
+  transition: transform .7s;
+  transition-timing-function: ease;
+}
+
+#header a.logo {
+  font-size: 25px;
+}
+#header a.logo:hover {
+  transform: scale(1);
+    opacity: 100%;
+}
+
+#header a:hover {
+  transform: scale(1.5);
+  opacity: 70%;
+}
+
+#header a.active {
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  #header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .header-right {
+    float: none;
+  }
+}
+

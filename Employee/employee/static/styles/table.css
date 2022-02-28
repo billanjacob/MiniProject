@@ -1,0 +1,21 @@
+table {
+    background-color: white;
+  max-width: 100%;
+    margin-left: auto;
+  margin-right: auto;
+}
+
+tr:nth-child(odd) {
+  background-color: lightgrey;
+}
+
+th {
+  background-color: darkgray;
+  color: black;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.5em 1em;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <title>Bank Of Kerala</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body>
+    {% include 'clerknavbar.html' %}
+    <div class="content">
+<div class="container">
+        <ul>
+            <li> <div class="bottom"><a style="text-decoration:none"href="{{ url_for('allusersclerk') }} ">LIST ALL USERS</a></div> </li>
+           <li> <div class="bottom"><a style="text-decoration:none"href="{{ url_for('accountdetailsclerk') }}">ACCOUNT DETAILS</a></div> </li>
+           <li> <div class="bottom"><a style="text-decoration:none"href="{{ url_for('editacbalance') }}">EDIT ACCOUNT BALANCE</a></div> </li>
+        </ul>
+    </div>
+</div>
+
+
+</body>
+</html>

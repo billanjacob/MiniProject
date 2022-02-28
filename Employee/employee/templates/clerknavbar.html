@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bank Of Kerala</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/navbar.css') }}">
+
+ <style>
+
+
+    </style>
+</head>
+<body>
+<div id="header" style="background-color: black">
+  <div class="logo"><a class="logo" href="#">BANK OF KERALA</a></div>
+
+  <div class="header-right">
+      <a href="{{url_for('clerkhome')}}">HOME</a>
+      <a href="{{url_for('logout')}}">LOGOUT</a>
+      <br><a style="transform: scale(1)" href="#">{{ session['clerkid'] }} , {{ session['desig'] }}</a>
+
+
+  </div>
+</div>
+
+</body>
+</html>
